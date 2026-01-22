@@ -1,0 +1,199 @@
+/* ============================================
+   PHOTO TIMELINE GAME STYLES
+   ============================================ */
+
+.timeline-progress {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.timeline-progress p {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-romantic);
+    transition: width 0.5s ease;
+}
+
+.timeline-photo {
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.timeline-question h4 {
+    font-family: var(--font-romantic);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.timeline-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.timeline-option {
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.timeline-option:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+}
+
+.timeline-option.correct {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+}
+
+.timeline-option.wrong {
+    background: rgba(244, 67, 54, 0.3);
+    border-color: #F44336;
+}
+
+.timeline-option:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.timeline-score {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.timeline-memory {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    border-radius: var(--radius-md);
+    animation: fadeInUp 0.5s ease;
+}
+
+.memory-result {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.memory-result.correct {
+    color: #4CAF50;
+}
+
+.memory-result.wrong {
+    color: #F44336;
+}
+
+.memory-text {
+    font-family: var(--font-romantic);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin: var(--spacing-md) 0;
+    font-style: italic;
+}
+
+.timeline-results {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.timeline-results h3 {
+    font-family: var(--font-romantic);
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 50%;
+    background: var(--gradient-romantic);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 182, 217, 0.4);
+}
+
+.score-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.score-percent {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    opacity: 0.8;
+}
+
+.result-message {
+    font-family: var(--font-romantic);
+    font-size: 1.4rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .timeline-photo img {
+        max-height: 300px;
+    }
+
+    .timeline-question h4 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-option {
+        font-size: 1rem;
+        padding: var(--spacing-sm);
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+}

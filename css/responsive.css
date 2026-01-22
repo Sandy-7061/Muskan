@@ -1,0 +1,476 @@
+/* ============================================
+   MOBILE-FIRST RESPONSIVE DESIGN
+   ============================================ */
+
+/* Base styles are mobile-first (already defined in main.css) */
+
+/* ============================================
+   SMALL PHONES (320px - 479px)
+   ============================================ */
+
+@media (max-width: 479px) {
+    :root {
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 2.5rem;
+    }
+
+    .romantic-heading {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .countdown-display {
+        gap: var(--spacing-sm);
+    }
+
+    .time-unit {
+        min-width: 70px;
+        padding: var(--spacing-sm);
+    }
+
+    .time-value {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .messages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .truth-btn,
+    .dare-btn {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        min-width: 150px;
+    }
+}
+
+/* ============================================
+   MEDIUM PHONES (480px - 767px)
+   ============================================ */
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .countdown-display {
+        gap: var(--spacing-md);
+    }
+
+    .time-unit {
+        min-width: 80px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .messages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   TABLETS (768px - 1023px)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .countdown-display {
+        gap: var(--spacing-lg);
+    }
+
+    .time-unit {
+        min-width: 100px;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .messages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .modal-content {
+        max-width: 600px;
+    }
+}
+
+/* ============================================
+   DESKTOP (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+    .section {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .messages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Hover effects only on desktop */
+    .game-card {
+        transition: all var(--transition-normal);
+    }
+
+    .game-card:hover .game-icon {
+        transform: scale(1.2);
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .romantic-heading {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* Touch-friendly button sizes */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-game {
+        padding: 1rem 2rem;
+    }
+
+    /* Remove hover effects on touch devices */
+    .game-card:hover {
+        transform: none;
+    }
+
+    .hover-lift:hover {
+        transform: none;
+    }
+
+    /* Larger tap targets */
+    .modal-close {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .option-btn,
+    .quiz-option {
+        padding: var(--spacing-md);
+    }
+
+    /* Disable hover animations */
+    * {
+        -webkit-tap-highlight-color: rgba(255, 182, 217, 0.3);
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION
+   ============================================ */
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .section {
+        min-height: auto;
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .landing-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .countdown-display {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+    }
+
+    .time-unit {
+        min-width: 70px;
+        padding: var(--spacing-sm);
+    }
+
+    .time-value {
+        font-size: 2rem;
+    }
+
+    .romantic-heading {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        max-height: 80vh;
+    }
+}
+
+/* ============================================
+   HIGH DPI / RETINA DISPLAYS
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Enhance visual quality on retina displays */
+    .glass-card {
+        backdrop-filter: blur(12px);
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    /* Already dark by default, but can enhance if needed */
+    body {
+        background: var(--gradient-dark);
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+
+    #particles-canvas,
+    #music-player,
+    #progress-bar,
+    .btn-primary,
+    .btn-secondary,
+    .btn-game {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Improve text readability */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        /* Prevent zoom on iOS */
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+        /* Prevent zoom on focus */
+    }
+}
+
+/* ============================================
+   SPECIFIC GAME RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Photo Guessing Game */
+@media (max-width: 767px) {
+    .photo-guess-image {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .photo-guess-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Puzzle Game */
+@media (max-width: 479px) {
+    .puzzle-grid {
+        max-width: 280px;
+        gap: 2px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .puzzle-grid {
+        max-width: 350px;
+    }
+}
+
+/* Truth or Dare */
+@media (max-width: 767px) {
+    .truth-dare-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .truth-btn,
+    .dare-btn {
+        width: 100%;
+    }
+}
+
+/* Quiz */
+@media (max-width: 479px) {
+    .quiz-score {
+        font-size: 3rem;
+    }
+
+    .quiz-question {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================
+   MODAL RESPONSIVE BEHAVIOR
+   ============================================ */
+
+@media (max-width: 767px) {
+    .game-modal {
+        padding: var(--spacing-sm);
+    }
+
+    .modal-content {
+        max-height: 85vh;
+        padding: var(--spacing-md);
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   MUSIC PLAYER RESPONSIVE
+   ============================================ */
+
+@media (max-width: 479px) {
+    .music-control {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    #music-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Reduce animations on low-end devices */
+@media (max-width: 767px) {
+    .animate-float {
+        animation: none;
+    }
+
+    #particles-canvas {
+        display: none;
+        /* Optional: disable particles on mobile for performance */
+    }
+}
